@@ -1,8 +1,8 @@
 <template>
-  <div id="posts">
+  <div id="posts-list">
 <!-- for loopib posts array läbi, luues uue Post componenti iga iterationiga. -->
     <div v-for="(post, index) in posts" :key="index">
-      <Post :date=post.date :description=post.description :img-url=post.image.src />
+      <Post :date=post.date :text=post.text :img-url=post.image.src />
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@
 import Post from './Post.vue'
 
 export default {
-  name: 'Posts',
+  name: 'PostsList',
   components: {
     Post
   },

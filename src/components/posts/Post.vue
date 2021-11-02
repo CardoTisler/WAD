@@ -1,14 +1,14 @@
 <template>
   <div class="post">
     <div class="post_header">
-      <img class="post_icon" alt="Profile icon" src="../assets/images/login.png">
+      <img class="post_icon" alt="Profile icon" src="../../assets/images/login.png">
       <p>{{date}}</p>
     </div>
     <div class="post_image_container">
       <img class="post_image" alt="Post image" :src="imgUrl">
     </div>
       <div class="post_description_container">
-        <p>{{description}}</p>
+        <p>{{text}}</p>
         <div class="button">
           <i class="fa fa-thumbs-up" aria-hidden="true"></i>
         </div>
@@ -21,7 +21,7 @@
 export default {
   name: 'Post',
   props: {
-    description: {
+    text: {
       type: String
     },
     date: {
