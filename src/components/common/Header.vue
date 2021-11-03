@@ -1,20 +1,27 @@
+<!-- TODO: Center header div-->
+<!-- TODO: Fix summary toggle wobble-->
+<!-- TODO: Stickynote clickable area too large-->
 <template>
-  <div id ="header">
-    <a class="home" href="/login"><img alt='home' src="../../assets/images/stickynote.png"></a>
-    <div class="search">
-      <input type="text" placeholder="Search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+  <div id="header">
+    <div id ="header-content">
+      <a class="home" href="/login"><img alt='home' src="../../assets/images/stickynote.png"></a>
+      <div class="search">
+        <input type="text" placeholder="Search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+
+      <UserDropdown :username=this.username :email=this.email />
+
     </div>
-
-    <UserDropdown :username=this.username :email=this.email />
-
+    <div id="header-links">
+      <span><a href="/login">Login</a></span>
+      <span><a href="/">Posts</a></span>
+      <span><a href="/contact">Contact</a></span>
+    </div>
   </div>
 </template>
 <script>
 import UserDropdown from './UserDropdown'
-// TODO: Center header div
-// TODO: Fix summary toggle wobble
-// FIXME: Stickynote clickable area too large
 
 export default{
   name: 'header',
@@ -31,6 +38,11 @@ export default{
 </script>
 <style scoped>
 #header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#header-content{
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -38,6 +50,19 @@ export default{
   justify-content:space-around;
   height: 50px;
   width: 100%;
+
+}
+#header-links{
+  margin-bottom: 2%;
+  margin-top: 0.5%;
+  width: 30%;
+  text-align-last: justify;
+}
+#header-links a{
+  text-decoration: none;
+  color: black;
+}
+#header-links a:hover{
 
 }
 .search input[type=text]{

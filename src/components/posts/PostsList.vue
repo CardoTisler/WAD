@@ -17,17 +17,23 @@ export default {
   },
   data () { // data on pmst iga komponendi isiklik in-memory db
     return {
-      posts: []
+      postsa: []
     }
   },
-  async mounted () { // TODO: Probably tahavad jqueryt siia aka $.ajax(...)
-    await fetch('https://api.npoint.io/b5c08d0e15c1c01572f1', {
-      method: 'GET'
-    }).then(async (res) => {
-      const {posts} = await res.json()
-      this.posts = posts // väärtustab posts muutuja data meetodis
-    })
+  computed: {
+    posts () {
+      return this.$store.getters.getAllPostsArray
+    }
   }
+  // async mounted () {
+  //   await fetch('https://api.npoint.io/b5c08d0e15c1c01572f1', {
+  //     method: 'GET'
+  //   }).then(async (res) => {
+  //     const {posts} = await res.json()
+  //     // this.$store.mutations.setAllPostsArray([], posts)
+  //     this.posts = posts
+  //   })
+  // }
 }
 </script>
 

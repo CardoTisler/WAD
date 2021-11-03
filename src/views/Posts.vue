@@ -1,3 +1,4 @@
+<!--TODO: Add button that resets PostsList -> LikeButton counters to 0-->
 <template>
   <div>
     <Header username="random" email="email@random.com"/>

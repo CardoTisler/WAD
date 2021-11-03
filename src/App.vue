@@ -5,8 +5,14 @@
 </template>
 
 <script>
+import store from './store/store'
+
 export default {
-  name: 'App'
+  name: 'App',
+  store,
+  mounted () {
+    this.$store.dispatch('fetchAllPosts')
+  }
 }
 </script>
 

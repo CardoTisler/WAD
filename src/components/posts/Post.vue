@@ -2,22 +2,20 @@
   <div class="post">
     <div class="post_header">
       <img class="post_icon" alt="Profile icon" src="../../assets/images/login.png">
-      <p>{{date}}</p>
+      <p>{{new Date(date).toLocaleDateString()}}</p>
     </div>
     <div class="post_image_container">
-      <img class="post_image" alt="Post image" :src="imgUrl">
+      <img v-if="imgUrl !== `none`" class="post_image" alt="Post image" :src="imgUrl">
     </div>
       <div class="post_description_container">
         <p>{{text}}</p>
-        <div class="button">
-          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-        </div>
+        <LikeButton />
     </div>
   </div>
 </template>
 
 <script>
-// TODO: date conversion to locale time
+import LikeButton from './LikeButton'
 export default {
   name: 'Post',
   props: {
@@ -31,6 +29,9 @@ export default {
       type: String,
       required: true
     }
+  },
+  components: {
+    LikeButton
   }
 }
 </script>
@@ -65,15 +66,5 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: start;
-}
-p + .button{
-  height: auto;
-  width: fit-content;
-  padding: 1% 2% 1% 2%;
-  border-radius: 2px;
-  background-color: cornflowerblue;
-}
-.fa-thumbs-up{
-  color: white;
 }
 </style>
