@@ -1,5 +1,6 @@
 <template>
-  <Header username="random" email="email@randomcontact.com"/>
+  <div>
+  </div>
 </template>
 <script>
 import Header from '../components/common/Header'

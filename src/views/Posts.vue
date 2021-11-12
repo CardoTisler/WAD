@@ -1,10 +1,8 @@
 <template>
   <div>
-    <Header username="random" email="email@random.com"/>
     <div id="resetButton">
       <ResetButton/>
     </div>
-
     <PostsList />
   </div>
 </template>

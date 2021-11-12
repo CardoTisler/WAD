@@ -1,7 +1,7 @@
 <template>
   <div id="like-button">
     <button class="button" @click.prevent="resetLikes">
-      <p>Reset Likes</p>
+      <p>Reset Likes </p>
     </button>
   </div>
 </template>
@@ -21,6 +21,9 @@ export default {
 #like-button {
   display: flex;
   flex-direction: row;
+}
+#like-button p::after{
+content: '\1F5D8';
 }
 
 .button {
