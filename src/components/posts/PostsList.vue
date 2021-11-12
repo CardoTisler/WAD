@@ -2,7 +2,8 @@
   <div id="posts-list">
 <!-- for loopib posts array läbi, luues uue Post componenti iga iterationiga. -->
     <div v-for="(post, index) in posts" :key="index">
-      <Post :date=post.date :text=post.text :img-url=post.image.src />
+      <!-- TODO Get like count -->
+      <Post :date="post.date" :text="post.text" :img-url="post.image.src" :like-count="post.likeCount" :id="post.id" />
     </div>
   </div>
 </template>
@@ -15,11 +16,11 @@ export default {
   components: {
     Post
   },
-  data () { // data on pmst iga komponendi isiklik in-memory db
-    return {
-      postsa: []
-    }
-  },
+  // data () { // data on pmst iga komponendi isiklik in-memory db
+  //   return {
+  //     postsa: []
+  //   }
+  // },
   computed: {
     posts () {
       return this.$store.getters.getAllPostsArray

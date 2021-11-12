@@ -4,32 +4,40 @@
       <i class="fa fa-thumbs-up" aria-hidden="true"></i>
     </button>
     <div>
-      <p v-if="likes === 1">{{likes}} like</p>
-      <p v-else>{{likes}} likes</p>
+      <p v-if="likeCount === 1">{{ likeCount }} like</p>
+      <p v-else>{{ likeCount }} likes</p>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: 'LikeButton',
-  data () {
-    return {
-      likes: 0
+  props: {
+    likeCount: {
+      type: Number,
+      required: true
+    },
+    id: {
+      type: Number,
+      required: true
     }
   },
+
   methods: {
     incrementLike: function () {
-      this.likes += 1
+      // Currently increment like count in browser side
+      this.$store.commit('incrementLikeCount', this.id)
     }
   }
 }
 </script>
 <style scoped>
-#like-button{
+#like-button {
   display: flex;
   flex-direction: row;
 }
-.button{
+
+.button {
   height: auto;
   width: fit-content;
   padding: 1% 2% 1% 2%;
@@ -37,7 +45,8 @@ export default {
   background-color: cornflowerblue;
   margin-right: 5px;
 }
-.fa-thumbs-up{
+
+.fa-thumbs-up {
   color: white;
 }
 </style>

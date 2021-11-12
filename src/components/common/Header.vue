@@ -14,9 +14,9 @@
 
     </div>
     <div id="header-links">
-      <span><a href="/login">Login</a></span>
-      <span><a href="/">Posts</a></span>
-      <span><a href="/contact">Contact</a></span>
+      <router-link to="/login">Login</router-link>
+      <router-link to="/">Posts</router-link>
+      <router-link to="/contact">Contact</router-link>
     </div>
   </div>
 </template>

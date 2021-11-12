@@ -9,7 +9,24 @@ export default new Vuex.Store({
   },
   mutations: {
     setAllPostsArray (state, payload) {
-      state.allPostsArray = payload
+      state.allPostsArray = payload.map(
+        post => ({...post, likeCount: 0})
+      )
+    },
+    incrementLikeCount (state, id) {
+      state.allPostsArray = state.allPostsArray.map(
+        post => {
+          if (post.id === id) {
+            post.likeCount += 1
+          }
+          return post
+        }
+      )
+    },
+    resetLikes (state) {
+      state.allPostsArray = state.allPostsArray.map(
+        post => ({...post, likeCount: 0})
+      )
     }
   },
   actions: {

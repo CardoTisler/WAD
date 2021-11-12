@@ -9,7 +9,7 @@
     </div>
       <div class="post_description_container">
         <p>{{text}}</p>
-        <LikeButton />
+        <LikeButton :like-count = "likeCount" :id = "id"/>
     </div>
   </div>
 </template>
@@ -28,10 +28,18 @@ export default {
     imgUrl: {
       type: String,
       required: true
+    },
+    likeCount: {
+      type: Number,
+      required: true
+    },
+    id: {
+      type: Number,
+      required: true
     }
   },
   components: {
-    LikeButton
+    'LikeButton': LikeButton
   }
 }
 </script>
