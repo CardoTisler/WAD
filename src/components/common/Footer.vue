@@ -19,9 +19,9 @@ export default {
 .footer {
   display: flex;
   flex-flow: row wrap;
+  color:white;
   padding: 30px 30px 20px 30px;
-  color: white;
-  background-color:cornflowerblue;
+  background-image: linear-gradient(cornflowerblue, #0b275b  95%, #0b275b);
   border-top: 1px solid #e5e5e5;
 }
 .footer > * {
@@ -33,6 +33,6 @@ export default {
 }
 #footer-links a{
   text-decoration: none;
-  color: black;
+  color: #f4c2c2;
 }
 </style>

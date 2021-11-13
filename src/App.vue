@@ -34,11 +34,15 @@ export default {
 <style>
 #header{
   width: 100%;
-  height: 10%;
+  min-height:10vh;
 }
 #footer{
   width: 100%;
-  height: 10%;
+  min-height:10vh;
+}
+#content{
+  min-height: 70vh;
+  width:100%;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
