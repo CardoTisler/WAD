@@ -13,10 +13,16 @@
       <UserDropdown :username=this.username :email=this.email />
 
     </div>
-    <div id="header-links">
-      <router-link to="/login">Login</router-link>
-      <router-link to="/">Posts</router-link>
-      <router-link to="/contact">Contact</router-link>
+<div id="header-links">
+<button class="buttonh" type="button">
+<router-link to="/login">Login</router-link>
+</button>
+<button class="buttonh" type="button">
+<router-link to="/">Posts</router-link>
+</button>
+<button class="buttonh" type="button">
+<router-link to="/contact">Contact</router-link>
+</button>
     </div>
   </div>
 </template>
@@ -93,5 +99,14 @@ export default{
 summary img{
   height: 20px;
   width: 20px;
+}
+.buttonh {
+box-shadow: inset 0px 0px 0px #E7ABD1;
+transition: all 0.5s;
+background-image: linear-gradient(to top right,#F9EAF4,#E7ABD1 ,#D8B2DA,#C9B8E3,#B9BFEC,#aac5f5,#EAF1FD);
+}
+
+.buttonh:hover {
+box-shadow: inset 0px -80px 0px cornflowerblue;
 }
 </style>
